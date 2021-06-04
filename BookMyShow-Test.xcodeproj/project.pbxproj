@@ -679,7 +679,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6DA08F8876315F8CF42C4CA1 /* Pods-BookMyShow-Test.debug.xcconfig */;
 			buildSettings = {
-				API_BASE_URL = "https://api.themoviedb.org/3";
+				API_BASE_URL = "https://api.themoviedb.org/3/";
 				API_KEY = 4d848ca0be8ba329a2063f01f9538750;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -700,7 +700,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8DE12CEA9E48517160FBC69 /* Pods-BookMyShow-Test.release.xcconfig */;
 			buildSettings = {
-				API_BASE_URL = "https://api.themoviedb.org/3";
+				API_BASE_URL = "https://api.themoviedb.org/3/";
 				API_KEY = 4d848ca0be8ba329a2063f01f9538750;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

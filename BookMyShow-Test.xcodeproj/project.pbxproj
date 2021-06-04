@@ -163,12 +163,10 @@
 		B424483A2669EF4500DC7091 /* BookMyShow-Test */ = {
 			isa = PBXGroup;
 			children = (
+				B4244943266A7FD800DC7091 /* Movie Detail */,
+				B4244942266A7FB300DC7091 /* Movie List */,
 				B4244935266A6BD200DC7091 /* Service */,
-				B424492B266A6A0400DC7091 /* View Model */,
 				B424487E2669FEB100DC7091 /* Utilities */,
-				B42448732669F4DE00DC7091 /* Model */,
-				B42448722669F4D400DC7091 /* Viewcontroller */,
-				B42448712669F4C700DC7091 /* Views */,
 				B424483B2669EF4500DC7091 /* AppDelegate.swift */,
 				B424483D2669EF4500DC7091 /* SceneDelegate.swift */,
 				B42448412669EF4500DC7091 /* Main.storyboard */,
@@ -210,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				B424483F2669EF4500DC7091 /* ViewController.swift */,
-				B4244884266A0B9000DC7091 /* MovieDetailsViewController.swift */,
 			);
 			path = Viewcontroller;
 			sourceTree = "<group>";
@@ -233,12 +230,12 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		B424492B266A6A0400DC7091 /* View Model */ = {
+		B424492B266A6A0400DC7091 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				B424492C266A6A1F00DC7091 /* MovieListViewModel.swift */,
 			);
-			path = "View Model";
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B4244935266A6BD200DC7091 /* Service */ = {
@@ -250,6 +247,57 @@
 				B424490C266A3A2500DC7091 /* RouterProtocol.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		B4244942266A7FB300DC7091 /* Movie List */ = {
+			isa = PBXGroup;
+			children = (
+				B42448712669F4C700DC7091 /* Views */,
+				B424492B266A6A0400DC7091 /* ViewModel */,
+				B42448722669F4D400DC7091 /* Viewcontroller */,
+				B42448732669F4DE00DC7091 /* Model */,
+			);
+			path = "Movie List";
+			sourceTree = "<group>";
+		};
+		B4244943266A7FD800DC7091 /* Movie Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B4244947266A801300DC7091 /* ViewModel */,
+				B4244946266A800600DC7091 /* Views */,
+				B4244945266A7FFD00DC7091 /* Model */,
+				B4244944266A7FE900DC7091 /* Viewcontroller */,
+			);
+			path = "Movie Detail";
+			sourceTree = "<group>";
+		};
+		B4244944266A7FE900DC7091 /* Viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				B4244884266A0B9000DC7091 /* MovieDetailsViewController.swift */,
+			);
+			path = Viewcontroller;
+			sourceTree = "<group>";
+		};
+		B4244945266A7FFD00DC7091 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4244946266A800600DC7091 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B4244947266A801300DC7091 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

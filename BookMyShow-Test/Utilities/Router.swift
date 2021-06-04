@@ -32,14 +32,6 @@ enum Router: URLRequestConvertible {
             
             var body:[String:Any] = [:]
             
-//            if let value = requestObj.body as? APIRequestBody {
-//                body = Mapper().toJSON(value)
-//            }
-//
-//            else if let value = requestObj.body as? RequestBody {
-//                body = Mapper().toJSON(value)
-//            }
-            
             if body.count > 0 {
     
                 do {
@@ -53,16 +45,7 @@ enum Router: URLRequestConvertible {
         }
         
         // Check if Request has parameters defined
-        
         var parameters:[String:Any] = [:]
-        
-//        if let value = requestObj.parameters as? APIRequestBody {
-//            parameters = Mapper().toJSON(value)
-//        }
-//        
-//        else if let value = requestObj.parameters as? RequestBody {
-//            parameters = Mapper().toJSON(value)
-//        }
         
         if parameters.count > 0 {
             

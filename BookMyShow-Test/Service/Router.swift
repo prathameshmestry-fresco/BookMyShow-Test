@@ -28,7 +28,6 @@ enum Router: URLRequestConvertible {
         // Check if Request has Body defined
         
         if requestObj.method == Alamofire.HTTPMethod.post || requestObj.method == Alamofire.HTTPMethod.delete {
-            // Request type is post/put -> check for request body
             
             let body:[String:Any] = [:]
             
@@ -45,14 +44,11 @@ enum Router: URLRequestConvertible {
         }
         
         // Check if Request has parameters defined
-        let parameters:[String:Any] = [:]
-        
+        var parameters:[String:Any] = [:]
+        parameters["api_key"] = Constants.mockApiKey
         if parameters.count > 0 {
-            
             print("\(parameters)")
-            
             do{
-                
                 if requestObj.method == Alamofire.HTTPMethod.get {
                     return try Alamofire.URLEncoding.default.encode(mutableURLRequest as URLRequestConvertible, with: parameters)
                 }
@@ -62,7 +58,6 @@ enum Router: URLRequestConvertible {
             catch{
                 print(error)
             }
-            
         }
         
         return mutableURLRequest
@@ -76,16 +71,10 @@ enum Router: URLRequestConvertible {
         mutableURLRequest.httpMethod = httpMethod // Set request method
         
         mutableURLRequest.setValue("application/json", forHTTPHeaderField:"Content-Type")
-        //mutableURLRequest.timeoutInterval = Constants.serverTimeoutInterval
-        
-        
-//        for header in headers {
-//            mutableURLRequest.setValue(header.value, forHTTPHeaderField: header.HTTPHeaderField)
+   
+//        if !Constants.mockApiKey.isEmpty {
+//            mutableURLRequest.setValue(Constants.mockApiKey, forHTTPHeaderField: "x-api-key")
 //        }
-        
-        if !Constants.mockApiKey.isEmpty {
-            mutableURLRequest.setValue(Constants.mockApiKey, forHTTPHeaderField: "x-api-key")
-        }
  
         return mutableURLRequest
     }

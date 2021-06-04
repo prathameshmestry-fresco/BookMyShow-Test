@@ -10,7 +10,6 @@ import Alamofire
 
 enum MovieRouterProtocol: RouterProtocol {
     
-    
     case getMovieList
     case getMovieSynopsis(Int)
     case getMovieReviews(Int)
@@ -68,7 +67,7 @@ enum MovieRouterProtocol: RouterProtocol {
 class MovieListManager {
     
     //MARK:- API Functions
-    func getMovieList(params: [String: Any] = [:], successCompletionHandler : @escaping (_ response : MoviePlayingModel) -> Void, errorCompletionHandler : @escaping (_ error: Error?) -> Void) {
+    func getMovieList(successCompletionHandler : @escaping (_ response : MoviePlayingModel) -> Void, errorCompletionHandler : @escaping (_ error: Error?) -> Void) {
         
         if RestClient.isConnectedToInternet() {
             AF.request(Router.movieRouterHandler(MovieRouterProtocol.getMovieList)).response { response in

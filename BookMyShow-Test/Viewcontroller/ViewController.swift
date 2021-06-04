@@ -21,14 +21,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        getMovieList()
     }
 
     func setupView() {
+        self.navigationController?.title = "Movies"
         self.view.backgroundColor = UIColor.lightGray
         setupTableView()
     }
     
     func getMovieList() {
+        movieModel.delegate = self
         movieModel.getMovieNowPlayingList()
     }
     
@@ -48,13 +51,14 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return movieModel.movieList?.movieResult?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.movieListTableViewCell.rawValue) as? MovieListTableViewCell else {
             return UITableViewCell()
         }
+        cell.setupData(movieData: (movieModel.movieList?.movieResult?[indexPath.row])!)
         cell.selectionStyle = .none
         return cell
     }
@@ -67,5 +71,12 @@ extension ViewController: UITableViewDelegate {
         let movieDetailsViewController = (self.storyboard?.instantiateViewController(withIdentifier: "MovieDetailsViewController")) as! MovieDetailsViewController
         movieDetailsViewController.title = "Movie"
         self.navigationController?.pushViewController(movieDetailsViewController, animated: true)
+    }
+}
+
+extension ViewController: MovieListViewModelDelegate {
+    
+    func didGetMovieListData() {
+        self.tableView.reloadData()
     }
 }

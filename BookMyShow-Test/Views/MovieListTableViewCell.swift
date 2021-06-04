@@ -11,6 +11,10 @@ class MovieListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var movieListView: UIView!
     @IBOutlet weak var bookTicketButton: UIButton!
+    @IBOutlet weak var movieNameLabel: UILabel!
+    @IBOutlet weak var releaseDataLabel: UILabel!
+    @IBOutlet weak var otherDetailsLabel: UILabel!
+    @IBOutlet weak var movieAdultLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,4 +30,10 @@ class MovieListTableViewCell: UITableViewCell {
         bookTicketButton.setBookButtonStyle()
     }
     
+    func setupData(movieData: MovieDetailModel) {
+        self.movieNameLabel.text = movieData.title
+        self.releaseDataLabel.text = "Release On: \(movieData.releaseDate ?? "")"
+        self.otherDetailsLabel.text = movieData.movieOverview
+        self.movieAdultLabel.text = movieData.isMovieAdult ?? false ? "A" : "U"
+    }
 }

@@ -7,19 +7,23 @@
 
 import Foundation
 
+protocol MovieListViewModelDelegate {
+    func didGetMovieListData()
+}
+
 class MovieListViewModel {
 
     var movieList: MoviePlayingModel?
+    var delegate: MovieListViewModelDelegate?
 
     func getMovieNowPlayingList() {
         let movieManager = MovieListManager()
-        movieManager.getMovieList(params: <#T##[String : Any]#>) { (response) in
+        movieManager.getMovieList() { (response) in
             self.movieList = response
+            self.delegate?.didGetMovieListData()
         } errorCompletionHandler: { (error) in
-            print("\(error?.localizedDescription)")
+            print("\(error?.localizedDescription ?? "")")
         }
-
-        
     }
     
 }

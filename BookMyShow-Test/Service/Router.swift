@@ -30,7 +30,7 @@ enum Router: URLRequestConvertible {
         if requestObj.method == Alamofire.HTTPMethod.post || requestObj.method == Alamofire.HTTPMethod.delete {
             // Request type is post/put -> check for request body
             
-            var body:[String:Any] = [:]
+            let body:[String:Any] = [:]
             
             if body.count > 0 {
     
@@ -45,7 +45,7 @@ enum Router: URLRequestConvertible {
         }
         
         // Check if Request has parameters defined
-        var parameters:[String:Any] = [:]
+        let parameters:[String:Any] = [:]
         
         if parameters.count > 0 {
             

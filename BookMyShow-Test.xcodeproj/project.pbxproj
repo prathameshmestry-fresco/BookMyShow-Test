@@ -28,6 +28,7 @@
 		B4244908266A39B500DC7091 /* MovieRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4244907266A39B500DC7091 /* MovieRouter.swift */; };
 		B424490D266A3A2500DC7091 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B424490C266A3A2500DC7091 /* RouterProtocol.swift */; };
 		B4244924266A420700DC7091 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4244923266A420700DC7091 /* Constants.swift */; };
+		B424492D266A6A1F00DC7091 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B424492C266A6A1F00DC7091 /* MovieListViewModel.swift */; };
 		BBDC2AE6FE0B2082566A200A /* Pods_BookMyShow_TestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AEAA1DF89BE24065478DC12 /* Pods_BookMyShow_TestTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		B4244907266A39B500DC7091 /* MovieRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRouter.swift; sourceTree = "<group>"; };
 		B424490C266A3A2500DC7091 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		B4244923266A420700DC7091 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B424492C266A6A1F00DC7091 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		D8DE12CEA9E48517160FBC69 /* Pods-BookMyShow-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookMyShow-Test.release.xcconfig"; path = "Target Support Files/Pods-BookMyShow-Test/Pods-BookMyShow-Test.release.xcconfig"; sourceTree = "<group>"; };
 		EDA59322245699F54EDAD404 /* Pods_BookMyShow_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookMyShow_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC27FE4F5C9EFB4BD3A3A232 /* Pods-BookMyShow-TestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookMyShow-TestTests.debug.xcconfig"; path = "Target Support Files/Pods-BookMyShow-TestTests/Pods-BookMyShow-TestTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +163,8 @@
 		B424483A2669EF4500DC7091 /* BookMyShow-Test */ = {
 			isa = PBXGroup;
 			children = (
+				B4244935266A6BD200DC7091 /* Service */,
+				B424492B266A6A0400DC7091 /* View Model */,
 				B424487E2669FEB100DC7091 /* Utilities */,
 				B42448732669F4DE00DC7091 /* Model */,
 				B42448722669F4D400DC7091 /* Viewcontroller */,
@@ -224,13 +228,28 @@
 			isa = PBXGroup;
 			children = (
 				B424487F2669FECF00DC7091 /* Utils.swift */,
-				B42448A5266A37C500DC7091 /* RestClient.swift */,
-				B4244902266A38E700DC7091 /* Router.swift */,
-				B4244907266A39B500DC7091 /* MovieRouter.swift */,
-				B424490C266A3A2500DC7091 /* RouterProtocol.swift */,
 				B4244923266A420700DC7091 /* Constants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B424492B266A6A0400DC7091 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				B424492C266A6A1F00DC7091 /* MovieListViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		B4244935266A6BD200DC7091 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B4244902266A38E700DC7091 /* Router.swift */,
+				B42448A5266A37C500DC7091 /* RestClient.swift */,
+				B4244907266A39B500DC7091 /* MovieRouter.swift */,
+				B424490C266A3A2500DC7091 /* RouterProtocol.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,6 +494,7 @@
 				B42448802669FECF00DC7091 /* Utils.swift in Sources */,
 				B42448402669EF4500DC7091 /* ViewController.swift in Sources */,
 				B4244903266A38E700DC7091 /* Router.swift in Sources */,
+				B424492D266A6A1F00DC7091 /* MovieListViewModel.swift in Sources */,
 				B4244885266A0B9000DC7091 /* MovieDetailsViewController.swift in Sources */,
 				B424483C2669EF4500DC7091 /* AppDelegate.swift in Sources */,
 				B42448A6266A37C500DC7091 /* RestClient.swift in Sources */,

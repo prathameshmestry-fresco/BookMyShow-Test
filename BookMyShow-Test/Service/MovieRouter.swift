@@ -63,3 +63,27 @@ enum MovieRouterProtocol: RouterProtocol {
         }
     }
 }
+
+
+class MovieListManager {
+    
+    //MARK:- API Functions
+    func getMovieList(params: [String: Any] = [:], successCompletionHandler : @escaping (_ response : MoviePlayingModel) -> Void, errorCompletionHandler : @escaping (_ error: Error?) -> Void) {
+        
+        if RestClient.isConnectedToInternet() {
+            AF.request(Router.movieRouterHandler(MovieRouterProtocol.getMovieList)).response { response in
+                if let data = response.data {
+                    do {
+                        let movieResponse = try JSONDecoder().decode(MoviePlayingModel.self, from: data)
+                        successCompletionHandler(movieResponse)
+                    }
+                    catch let error {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        } else {
+            debugPrint("No Internet Connection")
+        }
+    }
+}

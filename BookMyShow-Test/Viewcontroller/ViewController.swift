@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var movieModel = MovieListViewModel()
 
     enum CellNames: String {
         case movieListTableViewCell = "MovieListTableViewCell"
@@ -25,6 +26,10 @@ class ViewController: UIViewController {
     func setupView() {
         self.view.backgroundColor = UIColor.lightGray
         setupTableView()
+    }
+    
+    func getMovieList() {
+        movieModel.getMovieNowPlayingList()
     }
     
     //MARK: Setup TableView

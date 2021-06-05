@@ -32,6 +32,8 @@
 		B424494C266A8D7200DC7091 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B424494B266A8D7200DC7091 /* MovieDetailViewModel.swift */; };
 		B4C52FB3266B43A2004D6882 /* MovieSynopsisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C52FB1266B43A2004D6882 /* MovieSynopsisTableViewCell.swift */; };
 		B4C52FB4266B43A2004D6882 /* MovieSynopsisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4C52FB2266B43A2004D6882 /* MovieSynopsisTableViewCell.xib */; };
+		B4C52FB9266B4B3A004D6882 /* MovieSynopsisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C52FB8266B4B3A004D6882 /* MovieSynopsisModel.swift */; };
+		B4C52FBE266B4C63004D6882 /* ProductionDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C52FBD266B4C63004D6882 /* ProductionDetailsModel.swift */; };
 		BBDC2AE6FE0B2082566A200A /* Pods_BookMyShow_TestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AEAA1DF89BE24065478DC12 /* Pods_BookMyShow_TestTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,8 @@
 		B424494B266A8D7200DC7091 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		B4C52FB1266B43A2004D6882 /* MovieSynopsisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSynopsisTableViewCell.swift; sourceTree = "<group>"; };
 		B4C52FB2266B43A2004D6882 /* MovieSynopsisTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieSynopsisTableViewCell.xib; sourceTree = "<group>"; };
+		B4C52FB8266B4B3A004D6882 /* MovieSynopsisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSynopsisModel.swift; sourceTree = "<group>"; };
+		B4C52FBD266B4C63004D6882 /* ProductionDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionDetailsModel.swift; sourceTree = "<group>"; };
 		D8DE12CEA9E48517160FBC69 /* Pods-BookMyShow-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookMyShow-Test.release.xcconfig"; path = "Target Support Files/Pods-BookMyShow-Test/Pods-BookMyShow-Test.release.xcconfig"; sourceTree = "<group>"; };
 		EDA59322245699F54EDAD404 /* Pods_BookMyShow_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookMyShow_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC27FE4F5C9EFB4BD3A3A232 /* Pods-BookMyShow-TestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookMyShow-TestTests.debug.xcconfig"; path = "Target Support Files/Pods-BookMyShow-TestTests/Pods-BookMyShow-TestTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -288,7 +292,8 @@
 		B4244945266A7FFD00DC7091 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B424494B266A8D7200DC7091 /* MovieDetailViewModel.swift */,
+				B4C52FB8266B4B3A004D6882 /* MovieSynopsisModel.swift */,
+				B4C52FBD266B4C63004D6882 /* ProductionDetailsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 		B4244947266A801300DC7091 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B424494B266A8D7200DC7091 /* MovieDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -553,8 +559,10 @@
 				B42448402669EF4500DC7091 /* ViewController.swift in Sources */,
 				B4244903266A38E700DC7091 /* Router.swift in Sources */,
 				B424492D266A6A1F00DC7091 /* MovieListViewModel.swift in Sources */,
+				B4C52FBE266B4C63004D6882 /* ProductionDetailsModel.swift in Sources */,
 				B4244885266A0B9000DC7091 /* MovieDetailsViewController.swift in Sources */,
 				B424483C2669EF4500DC7091 /* AppDelegate.swift in Sources */,
+				B4C52FB9266B4B3A004D6882 /* MovieSynopsisModel.swift in Sources */,
 				B42448A6266A37C500DC7091 /* RestClient.swift in Sources */,
 				B424490D266A3A2500DC7091 /* RouterProtocol.swift in Sources */,
 				B4244924266A420700DC7091 /* Constants.swift in Sources */,

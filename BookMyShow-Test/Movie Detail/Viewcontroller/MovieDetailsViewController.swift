@@ -41,18 +41,30 @@ class MovieDetailsViewController: UIViewController {
 
 extension MovieDetailsViewController : UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return movieModel.sections.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.movieSynopsisTableViewCell.rawValue) as? MovieSynopsisTableViewCell else {
-            return UITableViewCell()
+        let section = movieModel.sections[indexPath.section]
+        
+        if section == .synopsis {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.movieSynopsisTableViewCell.rawValue) as? MovieSynopsisTableViewCell else {
+                return UITableViewCell()
+            }
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.movieSynopsisTableViewCell.rawValue) as? MovieSynopsisTableViewCell else {
+                return UITableViewCell()
+            }
+            return cell
         }
-        return cell
     }
-    
     
 }
 

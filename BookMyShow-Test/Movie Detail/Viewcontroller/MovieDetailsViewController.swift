@@ -15,9 +15,10 @@ class MovieDetailsViewController: UIViewController {
 
     enum CellNames: String {
         case movieSynopsisTableViewCell = "MovieSynopsisTableViewCell"
+        case reusableCollectionViewTableViewCell = "ReusableCollectionViewTableViewCell"
     }
     
-    let cellIdentifiers: [String] = [CellNames.movieSynopsisTableViewCell.rawValue]
+    let cellIdentifiers: [String] = [CellNames.movieSynopsisTableViewCell.rawValue, CellNames.reusableCollectionViewTableViewCell.rawValue]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +70,7 @@ extension MovieDetailsViewController : UITableViewDataSource {
             }
             return cell
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.movieSynopsisTableViewCell.rawValue) as? MovieSynopsisTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.reusableCollectionViewTableViewCell.rawValue) as? ReusableCollectionViewTableViewCell else {
                 return UITableViewCell()
             }
             return cell

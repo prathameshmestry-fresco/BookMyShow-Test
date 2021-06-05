@@ -11,7 +11,8 @@ class MovieDetailsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var movieModel = MovieDetailViewModel()
-    
+    var movieId: Int?
+
     enum CellNames: String {
         case movieSynopsisTableViewCell = "MovieSynopsisTableViewCell"
     }
@@ -25,6 +26,12 @@ class MovieDetailsViewController: UIViewController {
     
     func setupView() {
         setupTableView()
+        getMovieDetails()
+    }
+    
+    func getMovieDetails() {
+        movieModel.delegate = self
+        movieModel.getMovieSynoposisData(id: movieId!)
     }
     
     //MARK: Setup TableView
@@ -57,6 +64,9 @@ extension MovieDetailsViewController : UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.movieSynopsisTableViewCell.rawValue) as? MovieSynopsisTableViewCell else {
                 return UITableViewCell()
             }
+            if let data = movieModel.movieSynopsis {
+                cell.setupData(synopsisData: data)
+            }
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.movieSynopsisTableViewCell.rawValue) as? MovieSynopsisTableViewCell else {
@@ -70,4 +80,11 @@ extension MovieDetailsViewController : UITableViewDataSource {
 
 extension MovieDetailsViewController : UITableViewDelegate {
     
+}
+
+extension MovieDetailsViewController: MovieDetailViewModelDelegate {
+    
+    func didGetMovieDetailsData() {
+        self.tableView.reloadData()
+    }
 }

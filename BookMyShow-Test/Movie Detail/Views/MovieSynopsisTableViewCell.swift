@@ -22,7 +22,14 @@ class MovieSynopsisTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+    }
+    
+    func setupData(synopsisData: MovieSynopsisModel) {
+        movieTitleLabel.text = synopsisData.title
+        movieTagLineLabel.text = synopsisData.tagLine
+        movieReleaseDateLabel.text = synopsisData.releaseDate
+        moviePopularityLabel.text = "\(synopsisData.popularity ?? 0)"
+        movieOverViewLabel.text = synopsisData.movieOverview
     }
     
 }

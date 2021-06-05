@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MovieDetailViewModelDelegate {
-    func didGetMovieListData()
+    func didGetMovieDetailsData()
 }
 
 class MovieDetailViewModel {
@@ -20,12 +20,15 @@ class MovieDetailViewModel {
              similarMovies
     }
     
-    var sections: [Section] = []
-    
+    var sections: [Section] = [.synopsis, .reviews, .credits, .similarMovies]
+    var movieSynopsis: MovieSynopsisModel?
+    var delegate: MovieDetailViewModelDelegate?
+
     func getMovieSynoposisData(id: Int) {
         let movieManager = MovieListManager()
         movieManager.getMovieSynopsisDetail(movieId: id) { (response) in
-            
+            self.movieSynopsis = response
+            self.delegate?.didGetMovieDetailsData()
         } errorCompletionHandler: { (error) in
             debugPrint("\(error.debugDescription)")
         }

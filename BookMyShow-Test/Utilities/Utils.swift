@@ -8,7 +8,7 @@
 import UIKit
 
 class Utils {
-
+    
     class func getSchemeKey(_ key: String) -> String {
         let plistPath = Bundle.main.path(forResource: "Info", ofType: "plist")
         let dict = NSDictionary(contentsOfFile: plistPath!)
@@ -21,6 +21,15 @@ extension UITableView {
     func registerNibs(_ cellIdentifiers: [String]) {
         for identifier in cellIdentifiers {
             self.register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
+        }
+    }
+}
+
+extension UICollectionView {
+    
+    func registerNibs(_ cellIdentifiers: [String]) {
+        for identifier in cellIdentifiers {
+            self.register(UINib(nibName: identifier, bundle: nil), forCellWithReuseIdentifier: identifier)
         }
     }
 }

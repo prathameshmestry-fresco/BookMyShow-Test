@@ -63,9 +63,23 @@
                     <view key="view" contentMode="scaleToFill" id="fQ6-ae-nQr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="rDH-hn-KLS"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sa5-BS-RgC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="sa5-BS-RgC" secondAttribute="bottom" id="Asd-R4-Kg7"/>
+                            <constraint firstAttribute="trailing" secondItem="sa5-BS-RgC" secondAttribute="trailing" id="DxR-Xi-9qY"/>
+                            <constraint firstItem="sa5-BS-RgC" firstAttribute="leading" secondItem="fQ6-ae-nQr" secondAttribute="leading" id="IYf-16-jQ4"/>
+                            <constraint firstItem="sa5-BS-RgC" firstAttribute="top" secondItem="fQ6-ae-nQr" secondAttribute="top" id="QAV-SR-du6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="sa5-BS-RgC" id="m1E-sL-hy4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFg-G2-dr2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

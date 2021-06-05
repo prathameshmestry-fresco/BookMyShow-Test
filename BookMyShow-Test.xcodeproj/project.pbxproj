@@ -29,6 +29,9 @@
 		B424490D266A3A2500DC7091 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B424490C266A3A2500DC7091 /* RouterProtocol.swift */; };
 		B4244924266A420700DC7091 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4244923266A420700DC7091 /* Constants.swift */; };
 		B424492D266A6A1F00DC7091 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B424492C266A6A1F00DC7091 /* MovieListViewModel.swift */; };
+		B424494C266A8D7200DC7091 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B424494B266A8D7200DC7091 /* MovieDetailViewModel.swift */; };
+		B4C52FB3266B43A2004D6882 /* MovieSynopsisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C52FB1266B43A2004D6882 /* MovieSynopsisTableViewCell.swift */; };
+		B4C52FB4266B43A2004D6882 /* MovieSynopsisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4C52FB2266B43A2004D6882 /* MovieSynopsisTableViewCell.xib */; };
 		BBDC2AE6FE0B2082566A200A /* Pods_BookMyShow_TestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AEAA1DF89BE24065478DC12 /* Pods_BookMyShow_TestTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +85,9 @@
 		B424490C266A3A2500DC7091 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		B4244923266A420700DC7091 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B424492C266A6A1F00DC7091 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
+		B424494B266A8D7200DC7091 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		B4C52FB1266B43A2004D6882 /* MovieSynopsisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSynopsisTableViewCell.swift; sourceTree = "<group>"; };
+		B4C52FB2266B43A2004D6882 /* MovieSynopsisTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieSynopsisTableViewCell.xib; sourceTree = "<group>"; };
 		D8DE12CEA9E48517160FBC69 /* Pods-BookMyShow-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookMyShow-Test.release.xcconfig"; path = "Target Support Files/Pods-BookMyShow-Test/Pods-BookMyShow-Test.release.xcconfig"; sourceTree = "<group>"; };
 		EDA59322245699F54EDAD404 /* Pods_BookMyShow_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookMyShow_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC27FE4F5C9EFB4BD3A3A232 /* Pods-BookMyShow-TestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookMyShow-TestTests.debug.xcconfig"; path = "Target Support Files/Pods-BookMyShow-TestTests/Pods-BookMyShow-TestTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -282,6 +288,7 @@
 		B4244945266A7FFD00DC7091 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B424494B266A8D7200DC7091 /* MovieDetailViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,6 +296,8 @@
 		B4244946266A800600DC7091 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B4C52FB1266B43A2004D6882 /* MovieSynopsisTableViewCell.swift */,
+				B4C52FB2266B43A2004D6882 /* MovieSynopsisTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -408,6 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4C52FB4266B43A2004D6882 /* MovieSynopsisTableViewCell.xib in Resources */,
 				B42448482669EF4600DC7091 /* LaunchScreen.storyboard in Resources */,
 				B42448452669EF4600DC7091 /* Assets.xcassets in Resources */,
 				B42448772669FCE800DC7091 /* MovieListTableViewCell.xib in Resources */,
@@ -550,6 +560,8 @@
 				B4244924266A420700DC7091 /* Constants.swift in Sources */,
 				B4244892266A16A500DC7091 /* MoviePlayingModel.swift in Sources */,
 				B4244897266A172E00DC7091 /* MovieDetailModel.swift in Sources */,
+				B424494C266A8D7200DC7091 /* MovieDetailViewModel.swift in Sources */,
+				B4C52FB3266B43A2004D6882 /* MovieSynopsisTableViewCell.swift in Sources */,
 				B42448762669FCE800DC7091 /* MovieListTableViewCell.swift in Sources */,
 				B4244908266A39B500DC7091 /* MovieRouter.swift in Sources */,
 				B424483E2669EF4500DC7091 /* SceneDelegate.swift in Sources */,

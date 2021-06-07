@@ -69,10 +69,12 @@ extension MovieDetailsViewController : UITableViewDataSource {
                 cell.setupData(synopsisData: data)
             }
             return cell
+            
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.reusableCollectionViewTableViewCell.rawValue) as? ReusableCollectionViewTableViewCell else {
                 return UITableViewCell()
             }
+            cell.setupData()
             return cell
         }
     }

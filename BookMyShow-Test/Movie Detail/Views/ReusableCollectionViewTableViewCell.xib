@@ -17,9 +17,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xso-0c-b7D">
-                        <rect key="frame" x="10" y="10" width="343" height="113"/>
+                        <rect key="frame" x="0.0" y="0.0" width="363" height="133"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fEc-XR-EeO">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fEc-XR-EeO">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -29,10 +29,10 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="xso-0c-b7D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="4e9-cc-URx"/>
-                    <constraint firstAttribute="bottom" secondItem="xso-0c-b7D" secondAttribute="bottom" constant="10" id="KeA-A7-Ymb"/>
-                    <constraint firstAttribute="trailing" secondItem="xso-0c-b7D" secondAttribute="trailing" constant="10" id="Q7z-uQ-7Se"/>
-                    <constraint firstItem="xso-0c-b7D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="fLB-4B-nob"/>
+                    <constraint firstItem="xso-0c-b7D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="4e9-cc-URx"/>
+                    <constraint firstAttribute="bottom" secondItem="xso-0c-b7D" secondAttribute="bottom" id="KeA-A7-Ymb"/>
+                    <constraint firstAttribute="trailing" secondItem="xso-0c-b7D" secondAttribute="trailing" id="Q7z-uQ-7Se"/>
+                    <constraint firstItem="xso-0c-b7D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fLB-4B-nob"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

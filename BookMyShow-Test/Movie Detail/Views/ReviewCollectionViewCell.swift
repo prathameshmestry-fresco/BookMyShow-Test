@@ -11,7 +11,10 @@ class ReviewCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupView()
     }
 
+    func setupView() {
+        self.backgroundColor = UIColor.red
+    }
 }

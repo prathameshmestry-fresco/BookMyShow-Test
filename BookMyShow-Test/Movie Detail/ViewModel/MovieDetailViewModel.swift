@@ -23,6 +23,7 @@ class MovieDetailViewModel {
     var sections: [Section] = [.synopsis, .reviews, .credits, .similarMovies]
     var movieSynopsis: MovieSynopsisModel?
     var movieReviews: MovieReviewsModel?
+    var movieCredit: MovieCreditModel?
     var delegate: MovieDetailViewModelDelegate?
 
     func getMovieSynoposisData(id: Int, sectionIndex: Int) {
@@ -39,6 +40,16 @@ class MovieDetailViewModel {
         let movieManager = MovieListManager()
         movieManager.getMovieReviewsDetail(movieId: id) { (response) in
             self.movieReviews = response
+            self.delegate?.didGetMovieDetailsData(index: sectionIndex)
+        } errorCompletionHandler: { (error) in
+            debugPrint("\(error.debugDescription)")
+        }
+    }
+    
+    func getMovieCreditData(id: Int, sectionIndex: Int) {
+        let movieManager = MovieListManager()
+        movieManager.getMovieCreditDetail(movieId: id) { (response) in
+            self.movieCredit = response
             self.delegate?.didGetMovieDetailsData(index: sectionIndex)
         } errorCompletionHandler: { (error) in
             debugPrint("\(error.debugDescription)")

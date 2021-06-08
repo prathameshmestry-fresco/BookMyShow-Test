@@ -32,7 +32,8 @@ class MovieDetailsViewController: UIViewController {
     
     func getMovieDetails() {
         movieModel.delegate = self
-        movieModel.getMovieSynoposisData(id: movieId!)
+        movieModel.getMovieSynoposisData(id: movieId!, sectionIndex: 0)
+        movieModel.getMovieReviewsData(id: movieId!, sectionIndex: 0)
     }
     
     //MARK: Setup TableView
@@ -75,7 +76,6 @@ extension MovieDetailsViewController : UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.setupData(section: section)
-            cell.layoutIfNeeded()
             return cell
         }
     }
@@ -100,7 +100,7 @@ extension MovieDetailsViewController : UITableViewDelegate {
 
 extension MovieDetailsViewController: MovieDetailViewModelDelegate {
     
-    func didGetMovieDetailsData() {
-        self.tableView.reloadData()
+    func didGetMovieDetailsData(index: Int) {
+        self.tableView.reloadSections(IndexSet(integer: index), with: .fade)
     }
 }

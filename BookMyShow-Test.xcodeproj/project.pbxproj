@@ -11,6 +11,8 @@
 		721B447C9A69CD310ED80BC2 /* Pods_BookMyShow_Test_BookMyShow_TestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125263E8084ED2C03D224F1B /* Pods_BookMyShow_Test_BookMyShow_TestUITests.framework */; };
 		B41D9E19266F9FB900FA3F72 /* SimilarMoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D9E17266F9FB900FA3F72 /* SimilarMoviesCollectionViewCell.swift */; };
 		B41D9E1A266F9FB900FA3F72 /* SimilarMoviesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B41D9E18266F9FB900FA3F72 /* SimilarMoviesCollectionViewCell.xib */; };
+		B41D9E26266FB08C00FA3F72 /* MovieReviewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D9E25266FB08C00FA3F72 /* MovieReviewsModel.swift */; };
+		B41D9E2B266FB10E00FA3F72 /* ReviewResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D9E2A266FB10E00FA3F72 /* ReviewResultsModel.swift */; };
 		B424483C2669EF4500DC7091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B424483B2669EF4500DC7091 /* AppDelegate.swift */; };
 		B424483E2669EF4500DC7091 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B424483D2669EF4500DC7091 /* SceneDelegate.swift */; };
 		B42448402669EF4500DC7091 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B424483F2669EF4500DC7091 /* ViewController.swift */; };
@@ -71,6 +73,8 @@
 		B0C352A462F5BF1E19EF6152 /* Pods-BookMyShow-TestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookMyShow-TestTests.release.xcconfig"; path = "Target Support Files/Pods-BookMyShow-TestTests/Pods-BookMyShow-TestTests.release.xcconfig"; sourceTree = "<group>"; };
 		B41D9E17266F9FB900FA3F72 /* SimilarMoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarMoviesCollectionViewCell.swift; sourceTree = "<group>"; };
 		B41D9E18266F9FB900FA3F72 /* SimilarMoviesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimilarMoviesCollectionViewCell.xib; sourceTree = "<group>"; };
+		B41D9E25266FB08C00FA3F72 /* MovieReviewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewsModel.swift; sourceTree = "<group>"; };
+		B41D9E2A266FB10E00FA3F72 /* ReviewResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResultsModel.swift; sourceTree = "<group>"; };
 		B42448382669EF4500DC7091 /* BookMyShow-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BookMyShow-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B424483B2669EF4500DC7091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B424483D2669EF4500DC7091 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -310,6 +314,8 @@
 			children = (
 				B4C52FB8266B4B3A004D6882 /* MovieSynopsisModel.swift */,
 				B4C52FBD266B4C63004D6882 /* ProductionDetailsModel.swift */,
+				B41D9E25266FB08C00FA3F72 /* MovieReviewsModel.swift */,
+				B41D9E2A266FB10E00FA3F72 /* ReviewResultsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -591,6 +597,7 @@
 				B4C52FBE266B4C63004D6882 /* ProductionDetailsModel.swift in Sources */,
 				B4244885266A0B9000DC7091 /* MovieDetailsViewController.swift in Sources */,
 				B424483C2669EF4500DC7091 /* AppDelegate.swift in Sources */,
+				B41D9E2B266FB10E00FA3F72 /* ReviewResultsModel.swift in Sources */,
 				B4C52FB9266B4B3A004D6882 /* MovieSynopsisModel.swift in Sources */,
 				B42448A6266A37C500DC7091 /* RestClient.swift in Sources */,
 				B424490D266A3A2500DC7091 /* RouterProtocol.swift in Sources */,
@@ -601,6 +608,7 @@
 				B457897E266E097300DC18A4 /* CreditsCollectionViewCell.swift in Sources */,
 				B4C52FB3266B43A2004D6882 /* MovieSynopsisTableViewCell.swift in Sources */,
 				B42448762669FCE800DC7091 /* MovieListTableViewCell.swift in Sources */,
+				B41D9E26266FB08C00FA3F72 /* MovieReviewsModel.swift in Sources */,
 				B4244908266A39B500DC7091 /* MovieRouter.swift in Sources */,
 				B424483E2669EF4500DC7091 /* SceneDelegate.swift in Sources */,
 				B4C52FCE266B6073004D6882 /* ReviewCollectionViewCell.swift in Sources */,

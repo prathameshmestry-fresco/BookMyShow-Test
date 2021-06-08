@@ -104,4 +104,23 @@ class MovieListManager {
             debugPrint("No Internet Connection")
         }
     }
+    
+    func getMovieReviewsDetail(movieId: Int, successCompletionHandler : @escaping (_ response : MovieReviewsModel) -> Void, errorCompletionHandler : @escaping (_ error: Error?) -> Void) {
+        
+        if RestClient.isConnectedToInternet() {
+            AF.request(Router.movieRouterHandler(MovieRouterProtocol.getMovieReviews(movieId))).response { response in
+                if let data = response.data {
+                    do {
+                        let movieResponse = try JSONDecoder().decode(MovieReviewsModel.self, from: data)
+                        successCompletionHandler(movieResponse)
+                    }
+                    catch let error {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        } else {
+            debugPrint("No Internet Connection")
+        }
+    }
 }

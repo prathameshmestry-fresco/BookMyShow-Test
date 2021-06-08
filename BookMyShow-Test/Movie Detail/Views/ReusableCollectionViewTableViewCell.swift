@@ -59,6 +59,8 @@ extension ReusableCollectionViewTableViewCell: UICollectionViewDataSource, UICol
         switch sectionName {
         case .reviews:
             return self.movieDetailsModel?.movieReviews?.results?.count ?? 0
+        case .credits:
+            return self.movieDetailsModel?.movieCredit?.cast?.count ?? 0
         default:
             return 0
         }
@@ -79,6 +81,9 @@ extension ReusableCollectionViewTableViewCell: UICollectionViewDataSource, UICol
         case .credits:
             guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: CellNames.creditsCollectionViewCell.rawValue, for: indexPath) as? CreditsCollectionViewCell else {
                 return UICollectionViewCell()
+            }
+            if let movieCredit = self.movieDetailsModel?.movieCredit {
+                cell.setupData(credit: movieCredit, index: indexPath.row)
             }
             return cell
             

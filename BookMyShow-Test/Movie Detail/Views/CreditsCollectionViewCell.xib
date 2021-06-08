@@ -60,6 +60,10 @@
                 <constraint firstItem="5hg-Bz-wVc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="wpH-pg-sSs"/>
             </constraints>
             <size key="customSize" width="140" height="206"/>
+            <connections>
+                <outlet property="castCharacterName" destination="Qmi-Y5-tym" id="pl3-we-VB9"/>
+                <outlet property="castOriginalName" destination="z2k-LS-OmW" id="TeI-Tb-6g0"/>
+            </connections>
             <point key="canvasLocation" x="-130.43478260869566" y="48.214285714285715"/>
         </collectionViewCell>
     </objects>

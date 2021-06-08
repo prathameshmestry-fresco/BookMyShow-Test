@@ -32,8 +32,9 @@ class MovieDetailsViewController: UIViewController {
     
     func getMovieDetails() {
         movieModel.delegate = self
-        //movieModel.getMovieSynoposisData(id: movieId!, sectionIndex: 0)
+        movieModel.getMovieSynoposisData(id: movieId!, sectionIndex: 0)
         movieModel.getMovieReviewsData(id: movieId!, sectionIndex: 1)
+        movieModel.getMovieCreditData(id: movieId!, sectionIndex: 2)
     }
     
     //MARK: Setup TableView

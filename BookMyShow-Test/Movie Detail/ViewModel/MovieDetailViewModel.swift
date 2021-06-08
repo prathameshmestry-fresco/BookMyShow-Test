@@ -37,8 +37,8 @@ class MovieDetailViewModel {
     
     func getMovieReviewsData(id: Int, sectionIndex: Int) {
         let movieManager = MovieListManager()
-        movieManager.getMovieSynopsisDetail(movieId: id) { (response) in
-            self.movieSynopsis = response
+        movieManager.getMovieReviewsDetail(movieId: id) { (response) in
+            self.movieReviews = response
             self.delegate?.didGetMovieDetailsData(index: sectionIndex)
         } errorCompletionHandler: { (error) in
             debugPrint("\(error.debugDescription)")

@@ -8,9 +8,10 @@
 import UIKit
 
 class ReusableCollectionViewTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     var sectionName: MovieDetailViewModel.Section?
+    var movieDetailsModel: MovieDetailViewModel?
     
     enum CellNames: String {
         case reviewCollectionViewCell = "ReviewCollectionViewCell"
@@ -24,7 +25,7 @@ class ReusableCollectionViewTableViewCell: UITableViewCell {
         super.awakeFromNib()
         setupView()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -40,8 +41,10 @@ class ReusableCollectionViewTableViewCell: UITableViewCell {
         self.collectionView.registerNibs(cellIdentifiers)
     }
     
-    func setupData(section: MovieDetailViewModel.Section) {
+    func setupData(section: MovieDetailViewModel.Section, model: MovieDetailViewModel) {
         self.sectionName = section
+        self.movieDetailsModel = model
+        self.collectionView.reloadData()
     }
     
 }
@@ -53,7 +56,12 @@ extension ReusableCollectionViewTableViewCell: UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        switch sectionName {
+        case .reviews:
+            return self.movieDetailsModel?.movieReviews?.results?.count ?? 0
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -62,6 +70,9 @@ extension ReusableCollectionViewTableViewCell: UICollectionViewDataSource, UICol
         case .reviews:
             guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: CellNames.reviewCollectionViewCell.rawValue, for: indexPath) as? ReviewCollectionViewCell else {
                 return UICollectionViewCell()
+            }
+            if let movieReviews = self.movieDetailsModel?.movieReviews {
+                cell.setupData(reviews: movieReviews, index: indexPath.row)
             }
             return cell
             
@@ -89,7 +100,7 @@ extension ReusableCollectionViewTableViewCell: UICollectionViewDataSource, UICol
             return CGSize(width: self.frame.width - 100, height: 300)
         default:
             return CGSize(width: 250, height: 300)
-
+            
         }
     }
 }

@@ -32,8 +32,8 @@ class MovieDetailsViewController: UIViewController {
     
     func getMovieDetails() {
         movieModel.delegate = self
-        movieModel.getMovieSynoposisData(id: movieId!, sectionIndex: 0)
-        movieModel.getMovieReviewsData(id: movieId!, sectionIndex: 0)
+        //movieModel.getMovieSynoposisData(id: movieId!, sectionIndex: 0)
+        movieModel.getMovieReviewsData(id: movieId!, sectionIndex: 1)
     }
     
     //MARK: Setup TableView
@@ -63,6 +63,7 @@ extension MovieDetailsViewController : UITableViewDataSource {
         let section = movieModel.sections[indexPath.section]
         
         if section == .synopsis {
+            
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.movieSynopsisTableViewCell.rawValue) as? MovieSynopsisTableViewCell else {
                 return UITableViewCell()
             }
@@ -72,11 +73,13 @@ extension MovieDetailsViewController : UITableViewDataSource {
             return cell
             
         } else {
+            
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.reusableCollectionViewTableViewCell.rawValue) as? ReusableCollectionViewTableViewCell else {
                 return UITableViewCell()
             }
-            cell.setupData(section: section)
+            cell.setupData(section: section, model: self.movieModel)
             return cell
+            
         }
     }
     

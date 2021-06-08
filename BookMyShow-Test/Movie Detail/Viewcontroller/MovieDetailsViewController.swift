@@ -41,8 +41,8 @@ class MovieDetailsViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.separatorStyle = .none
         self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 44.0
         self.tableView.registerNibs(cellIdentifiers)
-        self.tableView.rowHeight = UITableView.automaticDimension
     }
     
 }
@@ -74,7 +74,8 @@ extension MovieDetailsViewController : UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.reusableCollectionViewTableViewCell.rawValue) as? ReusableCollectionViewTableViewCell else {
                 return UITableViewCell()
             }
-            cell.setupData()
+            cell.setupData(section: section)
+            cell.layoutIfNeeded()
             return cell
         }
     }
@@ -82,6 +83,18 @@ extension MovieDetailsViewController : UITableViewDataSource {
 }
 
 extension MovieDetailsViewController : UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let section = movieModel.sections[indexPath.section]
+        if section == .synopsis {
+            return UITableView.automaticDimension
+        } else if section == .reviews {
+            return 100.0
+        } else {
+            return 250.0
+        }
+    }
     
 }
 

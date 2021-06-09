@@ -7,6 +7,7 @@ target 'BookMyShow-Test' do
 
   # Pods for BookMyShow-Test
   pod 'Alamofire'
+  pod 'AlamofireImage'
 
   target 'BookMyShow-TestTests' do
     inherit! :search_paths

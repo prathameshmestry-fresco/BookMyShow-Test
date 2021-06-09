@@ -58,7 +58,7 @@ extension ViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.movieListTableViewCell.rawValue) as? MovieListTableViewCell else {
             return UITableViewCell()
         }
-        cell.setupData(movieData: (movieModel.movieList?.movieResult?[indexPath.row])!)
+        cell.setupData(movieData: (movieModel.movieList?.movieResult?[indexPath.row])!, imageConfig: ImageConfigHelper.shared.movieImageConfig!)
         cell.selectionStyle = .none
         return cell
     }

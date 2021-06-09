@@ -15,6 +15,7 @@ enum MovieRouterProtocol: RouterProtocol {
     case getMovieReviews(Int)
     case getMovieCredits(Int)
     case getSimilarMovies(Int)
+    case getMovieImageCnfig
     
     var path: String {
         switch self {
@@ -29,6 +30,9 @@ enum MovieRouterProtocol: RouterProtocol {
             return "movie/\(movieId)/credits"
         case .getSimilarMovies(let movieId):
             return "movie/\(movieId)/similar"
+        case .getMovieImageCnfig:
+            return "configuration"
+            
         }
     }
     
@@ -44,6 +48,8 @@ enum MovieRouterProtocol: RouterProtocol {
         case .getMovieCredits(_):
             return .get
         case .getSimilarMovies(_):
+            return .get
+        case .getMovieImageCnfig:
             return .get
         }
     }
@@ -161,4 +167,24 @@ class MovieListManager {
             debugPrint("No Internet Connection")
         }
     }
+    
+    func getMovieImageConfiguration(successCompletionHandler : @escaping (_ response : MoviePosterImageModel) -> Void, errorCompletionHandler : @escaping (_ error: Error?) -> Void) {
+        
+        if RestClient.isConnectedToInternet() {
+            AF.request(Router.movieRouterHandler(MovieRouterProtocol.getMovieImageCnfig)).response { response in
+                if let data = response.data {
+                    do {
+                        let movieResponse = try JSONDecoder().decode(MoviePosterImageModel.self, from: data)
+                        successCompletionHandler(movieResponse)
+                    }
+                    catch let error {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        } else {
+            debugPrint("No Internet Connection")
+        }
+    }
+    
 }

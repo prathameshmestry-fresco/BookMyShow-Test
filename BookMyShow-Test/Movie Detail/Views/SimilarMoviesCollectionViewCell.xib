@@ -60,6 +60,10 @@
                 <constraint firstItem="Cko-7i-H5x" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="ldI-4w-2Fp"/>
             </constraints>
             <size key="customSize" width="141" height="205"/>
+            <connections>
+                <outlet property="languageLabel" destination="3Ib-TQ-2zY" id="rE9-im-Kuc"/>
+                <outlet property="similarMovieNameLabel" destination="VK5-jm-KPO" id="qFx-ic-hSN"/>
+            </connections>
             <point key="canvasLocation" x="-80.434782608695656" y="105.46875"/>
         </collectionViewCell>
     </objects>

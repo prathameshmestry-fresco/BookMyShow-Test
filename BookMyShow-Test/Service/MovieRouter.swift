@@ -142,4 +142,23 @@ class MovieListManager {
             debugPrint("No Internet Connection")
         }
     }
+    
+    func getSimilarMovieDetail(movieId: Int, successCompletionHandler : @escaping (_ response : SimilarMoviesModel) -> Void, errorCompletionHandler : @escaping (_ error: Error?) -> Void) {
+        
+        if RestClient.isConnectedToInternet() {
+            AF.request(Router.movieRouterHandler(MovieRouterProtocol.getSimilarMovies(movieId))).response { response in
+                if let data = response.data {
+                    do {
+                        let similarMovieResponse = try JSONDecoder().decode(SimilarMoviesModel.self, from: data)
+                        successCompletionHandler(similarMovieResponse)
+                    }
+                    catch let error {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        } else {
+            debugPrint("No Internet Connection")
+        }
+    }
 }

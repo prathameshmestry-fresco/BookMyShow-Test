@@ -61,6 +61,8 @@ extension ReusableCollectionViewTableViewCell: UICollectionViewDataSource, UICol
             return self.movieDetailsModel?.movieReviews?.results?.count ?? 0
         case .credits:
             return self.movieDetailsModel?.movieCredit?.cast?.count ?? 0
+        case .similarMovies:
+            return self.movieDetailsModel?.similarMovie?.results?.count ?? 0
         default:
             return 0
         }
@@ -91,6 +93,9 @@ extension ReusableCollectionViewTableViewCell: UICollectionViewDataSource, UICol
             guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: CellNames.similarMoviesCollectionViewCell.rawValue, for: indexPath) as? SimilarMoviesCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            if let similarMovie = self.movieDetailsModel?.similarMovie {
+                cell.setupData(similarMovie: similarMovie, index: indexPath.row)
+            }
             return cell
             
         default:
@@ -102,9 +107,9 @@ extension ReusableCollectionViewTableViewCell: UICollectionViewDataSource, UICol
         
         switch sectionName {
         case .reviews:
-            return CGSize(width: self.frame.width - 100, height: 300)
+            return CGSize(width: self.frame.width - 100, height: 100)
         default:
-            return CGSize(width: 250, height: 300)
+            return CGSize(width: 250, height: 170)
             
         }
     }

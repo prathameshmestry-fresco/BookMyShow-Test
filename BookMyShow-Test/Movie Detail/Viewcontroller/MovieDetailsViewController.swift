@@ -35,6 +35,7 @@ class MovieDetailsViewController: UIViewController {
         movieModel.getMovieSynoposisData(id: movieId!, sectionIndex: 0)
         movieModel.getMovieReviewsData(id: movieId!, sectionIndex: 1)
         movieModel.getMovieCreditData(id: movieId!, sectionIndex: 2)
+        movieModel.getSimilarMovieData(id: movieId!, sectionIndex: 3)
     }
     
     //MARK: Setup TableView
@@ -95,9 +96,10 @@ extension MovieDetailsViewController : UITableViewDelegate {
             return UITableView.automaticDimension
         } else if section == .reviews {
             return 100.0
-        } else {
-            return 250.0
+        } else if section == .credits || section == .similarMovies {
+            return 170.0
         }
+        return 0.0
     }
     
 }
@@ -105,6 +107,7 @@ extension MovieDetailsViewController : UITableViewDelegate {
 extension MovieDetailsViewController: MovieDetailViewModelDelegate {
     
     func didGetMovieDetailsData(index: Int) {
-        self.tableView.reloadSections(IndexSet(integer: index), with: .fade)
+        self.tableView.reloadData()
+        //self.tableView.reloadSections(IndexSet(integer: index), with: .fade)
     }
 }

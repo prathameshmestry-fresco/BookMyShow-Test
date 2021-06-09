@@ -24,8 +24,9 @@ class MovieDetailViewModel {
     var movieSynopsis: MovieSynopsisModel?
     var movieReviews: MovieReviewsModel?
     var movieCredit: MovieCreditModel?
+    var similarMovie: SimilarMoviesModel?
     var delegate: MovieDetailViewModelDelegate?
-
+    
     func getMovieSynoposisData(id: Int, sectionIndex: Int) {
         let movieManager = MovieListManager()
         movieManager.getMovieSynopsisDetail(movieId: id) { (response) in
@@ -40,6 +41,9 @@ class MovieDetailViewModel {
         let movieManager = MovieListManager()
         movieManager.getMovieReviewsDetail(movieId: id) { (response) in
             self.movieReviews = response
+            if (self.movieReviews?.results?.count == 0) {
+                self.sections.remove(at: sectionIndex)
+            }
             self.delegate?.didGetMovieDetailsData(index: sectionIndex)
         } errorCompletionHandler: { (error) in
             debugPrint("\(error.debugDescription)")
@@ -50,6 +54,22 @@ class MovieDetailViewModel {
         let movieManager = MovieListManager()
         movieManager.getMovieCreditDetail(movieId: id) { (response) in
             self.movieCredit = response
+            if (self.movieCredit?.cast?.count == 0) {
+                self.sections.remove(at: sectionIndex)
+            }
+            self.delegate?.didGetMovieDetailsData(index: sectionIndex)
+        } errorCompletionHandler: { (error) in
+            debugPrint("\(error.debugDescription)")
+        }
+    }
+    
+    func getSimilarMovieData(id: Int, sectionIndex: Int) {
+        let movieManager = MovieListManager()
+        movieManager.getSimilarMovieDetail(movieId: id) { (response) in
+            self.similarMovie = response
+            if (self.similarMovie?.results?.count == 0) {
+                self.sections.remove(at: sectionIndex)
+            }
             self.delegate?.didGetMovieDetailsData(index: sectionIndex)
         } errorCompletionHandler: { (error) in
             debugPrint("\(error.debugDescription)")

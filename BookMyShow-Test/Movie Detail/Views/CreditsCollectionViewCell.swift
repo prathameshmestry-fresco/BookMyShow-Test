@@ -9,16 +9,16 @@ import UIKit
 
 class CreditsCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var castOriginalName: UILabel!
-    @IBOutlet weak var castCharacterName: UILabel!
+    @IBOutlet weak var castOriginalNameLabel: UILabel!
+    @IBOutlet weak var castCharacterNameLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     func setupData(credit: MovieCreditModel, index: Int) {
-        self.castOriginalName.text = "\(credit.cast?[index].name ?? "") (\(credit.cast?[index].knownDepartment ?? ""))"
-        self.castCharacterName.text = credit.cast?[index].character
+        self.castOriginalNameLabel.text = "\(credit.cast?[index].name ?? "") (\(credit.cast?[index].knownDepartment ?? ""))"
+        self.castCharacterNameLabel.text = credit.cast?[index].character
     }
 
 }

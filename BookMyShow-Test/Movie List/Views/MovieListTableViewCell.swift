@@ -32,7 +32,8 @@ class MovieListTableViewCell: UITableViewCell {
         bookTicketButton.setBookButtonStyle()
     }
     
-    func setupData(movieData: MovieDetailModel, imageConfig: MoviePosterImageModel) {
+    func setupData(movieData: MovieDetailModel) {
+        let imageConfig: MoviePosterImageModel = ImageConfigHelper.shared.movieImageConfig!
         let imgUrl = URL(string: "\(imageConfig.images?.secureBaseURL ?? "")/\(imageConfig.images?.logoSizes?[3] ?? "")/\(movieData.posterUrl ?? "")")
         self.moviePosterImageView.af.setImage(withURL: imgUrl!)
         self.movieNameLabel.text = movieData.title

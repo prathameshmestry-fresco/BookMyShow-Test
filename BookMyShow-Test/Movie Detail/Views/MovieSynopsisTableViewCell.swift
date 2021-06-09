@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class MovieSynopsisTableViewCell: UITableViewCell {
 
@@ -25,6 +26,8 @@ class MovieSynopsisTableViewCell: UITableViewCell {
     }
     
     func setupData(synopsisData: MovieSynopsisModel) {
+        let imageConfig: MoviePosterImageModel = ImageConfigHelper.shared.movieImageConfig!
+        moviePosterImageView.af.setImage(withURL: URL(string: "\(imageConfig.images?.secureBaseURL ?? "")/\(imageConfig.images?.backdropSizes?[2] ?? "")/\(synopsisData.backdropPath ?? "")")!)
         movieTitleLabel.text = synopsisData.title
         movieTagLineLabel.text = synopsisData.tagLine
         movieReleaseDateLabel.text = synopsisData.releaseDate

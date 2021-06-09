@@ -12,7 +12,7 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var movieModel = MovieDetailViewModel()
     var movieId: Int?
-
+    
     enum CellNames: String {
         case movieSynopsisTableViewCell = "MovieSynopsisTableViewCell"
         case reusableCollectionViewTableViewCell = "ReusableCollectionViewTableViewCell"
@@ -32,10 +32,27 @@ class MovieDetailsViewController: UIViewController {
     
     func getMovieDetails() {
         movieModel.delegate = self
-        movieModel.getMovieSynoposisData(id: movieId!, sectionIndex: 0)
-        movieModel.getMovieReviewsData(id: movieId!, sectionIndex: 1)
-        movieModel.getMovieCreditData(id: movieId!, sectionIndex: 2)
-        movieModel.getSimilarMovieData(id: movieId!, sectionIndex: 3)
+        let group = DispatchGroup()
+        
+        group.enter()
+        movieModel.getMovieSynoposisData(id: self.movieId!, sectionIndex: 0)
+        group.leave()
+        
+        group.enter()
+        movieModel.getMovieReviewsData(id: self.movieId!, sectionIndex: 1)
+        group.leave()
+        
+        group.enter()
+        movieModel.getMovieCreditData(id: self.movieId!, sectionIndex: 2)
+        group.leave()
+        
+        group.enter()
+        movieModel.getSimilarMovieData(id: self.movieId!, sectionIndex: 3)
+        group.leave()
+        
+        group.notify(queue: DispatchQueue.main) {
+            self.tableView.reloadData()
+        }
     }
     
     //MARK: Setup TableView
@@ -53,6 +70,7 @@ class MovieDetailsViewController: UIViewController {
 extension MovieDetailsViewController : UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        print("Count \(movieModel.sections.count)")
         return movieModel.sections.count
     }
     
@@ -62,6 +80,7 @@ extension MovieDetailsViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        print("Section \(indexPath.section)")
         let section = movieModel.sections[indexPath.section]
         
         if section == .synopsis {
@@ -79,6 +98,7 @@ extension MovieDetailsViewController : UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.reusableCollectionViewTableViewCell.rawValue) as? ReusableCollectionViewTableViewCell else {
                 return UITableViewCell()
             }
+            cell.backgroundColor = UIColor.red
             cell.setupData(section: section, model: self.movieModel)
             return cell
             
@@ -91,6 +111,7 @@ extension MovieDetailsViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
+        //print("Section \(indexPath.section)")
         let section = movieModel.sections[indexPath.section]
         if section == .synopsis {
             return UITableView.automaticDimension
@@ -105,7 +126,6 @@ extension MovieDetailsViewController : UITableViewDelegate {
 }
 
 extension MovieDetailsViewController: MovieDetailViewModelDelegate {
-    
     func didGetMovieDetailsData(index: Int) {
         self.tableView.reloadData()
         //self.tableView.reloadSections(IndexSet(integer: index), with: .fade)

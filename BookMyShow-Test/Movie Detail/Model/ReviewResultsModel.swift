@@ -10,7 +10,7 @@ import Foundation
 class ReviewResultsModel: Codable {
     
     let author: String?
-    let authorDetails: [AuthorDetailsModel]?
+    let authorDetails: AuthorDetailsModel?
     let content: String?
     let createdAt: String?
     let id: String?
@@ -30,7 +30,7 @@ class ReviewResultsModel: Codable {
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.author = try values.decodeIfPresent(String.self, forKey: .author)
-        self.authorDetails = try values.decodeIfPresent([AuthorDetailsModel].self, forKey: .authorDetails)
+        self.authorDetails = try values.decodeIfPresent(AuthorDetailsModel.self, forKey: .authorDetails)
         self.content = try values.decodeIfPresent(String.self, forKey: .content)
         self.createdAt = try values.decodeIfPresent(String.self, forKey: .createdAt)
         self.id = try values.decodeIfPresent(String.self, forKey: .id)

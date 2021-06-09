@@ -25,6 +25,6 @@ class ReviewCollectionViewCell: UICollectionViewCell {
     func setupData(reviews: MovieReviewsModel, index: Int) {
         self.authorNameLabel.text = reviews.results?[index].author
         self.authorContentLabel.text = reviews.results?[index].content
-        self.authorRatingLabel.text = "\(reviews.results?[index].authorDetails?[0].rating ?? 0)"
+        self.authorRatingLabel.text = "\(reviews.results?[index].authorDetails?.rating ?? 0)"
     }
 }

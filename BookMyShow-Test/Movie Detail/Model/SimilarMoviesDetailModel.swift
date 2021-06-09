@@ -20,7 +20,7 @@ class SimilarMoviesDetailModel: Codable {
     let popularity: Double?
     let title: String?
     let video: Bool?
-    let voteAverage: Int?
+    let voteAverage: Double?
     let voteCount: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -52,7 +52,7 @@ class SimilarMoviesDetailModel: Codable {
         self.popularity = try values.decodeIfPresent(Double.self, forKey: .popularity)
         self.title = try values.decodeIfPresent(String.self, forKey: .title)
         self.video = try values.decodeIfPresent(Bool.self, forKey: .video)
-        self.voteAverage = try values.decodeIfPresent(Int.self, forKey: .voteAverage)
+        self.voteAverage = try values.decodeIfPresent(Double.self, forKey: .voteAverage)
         self.voteCount = try values.decodeIfPresent(Int.self, forKey: .voteCount)
     }
     

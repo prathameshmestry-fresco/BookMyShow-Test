@@ -10,7 +10,7 @@ import Foundation
 class MoviePlayingModel: Codable {
 
     let pageNumber: Int?
-    let movieResult: [MovieDetailModel]?
+    var movieResult: [MovieDetailModel]?
     let totalPages: Int?
     let totalResults: Int?
     

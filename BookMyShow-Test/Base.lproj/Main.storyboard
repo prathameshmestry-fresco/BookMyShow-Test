@@ -32,23 +32,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TtE-gS-7iI">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YgU-AQ-kCL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pRh-AC-9cd">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="wul-P0-uvL"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TtE-gS-7iI">
+                                        <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="jC7-va-tkr"/>
+                        <viewLayoutGuide key="safeArea" id="7Bo-Ou-or9"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="TtE-gS-7iI" secondAttribute="bottom" id="NMK-kj-8Gh"/>
-                            <constraint firstItem="TtE-gS-7iI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UHq-D9-5KH"/>
-                            <constraint firstAttribute="trailing" secondItem="TtE-gS-7iI" secondAttribute="trailing" id="iQi-xB-G9Z"/>
-                            <constraint firstItem="TtE-gS-7iI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="shS-Vq-Wzf"/>
+                            <constraint firstItem="YgU-AQ-kCL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="052-PD-JLR"/>
+                            <constraint firstItem="7Bo-Ou-or9" firstAttribute="trailing" secondItem="YgU-AQ-kCL" secondAttribute="trailing" id="OkK-YH-gFf"/>
+                            <constraint firstItem="YgU-AQ-kCL" firstAttribute="top" secondItem="7Bo-Ou-or9" secondAttribute="top" id="c3W-SJ-eiy"/>
+                            <constraint firstAttribute="bottom" secondItem="YgU-AQ-kCL" secondAttribute="bottom" id="ukE-iv-vbJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Fmy-1E-4ZB"/>
                     <connections>
+                        <outlet property="movieSearchBar" destination="pRh-AC-9cd" id="OgA-Wh-fdf"/>
                         <outlet property="tableView" destination="TtE-gS-7iI" id="ICf-95-NGr"/>
                     </connections>
                 </viewController>

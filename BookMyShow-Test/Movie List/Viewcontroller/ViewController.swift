@@ -8,10 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var movieSearchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var movieModel = MovieListViewModel()
-
+    var movieList: [MovieDetailModel]?
+    
     enum CellNames: String {
         case movieListTableViewCell = "MovieListTableViewCell"
     }
@@ -23,15 +25,17 @@ class ViewController: UIViewController {
         setupView()
         getMovieList()
     }
-
+    
     func setupView() {
-        self.navigationController?.title = "Movies"
+        self.title = "Movies"
+        self.movieSearchBar.delegate = self
         self.view.backgroundColor = UIColor.lightGray
         setupTableView()
     }
     
     func getMovieList() {
         movieModel.delegate = self
+        movieModel.vc = self
         movieModel.getMovieNowPlayingList()
     }
     
@@ -44,12 +48,12 @@ class ViewController: UIViewController {
         self.tableView.registerNibs(cellIdentifiers)
         self.tableView.rowHeight = UITableView.automaticDimension
     }
-
+    
 }
 
 // MARK: UITableView DataSource Method
 extension ViewController: UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieModel.movieList?.movieResult?.count ?? 0
     }
@@ -73,6 +77,21 @@ extension ViewController: UITableViewDelegate {
         movieDetailsViewController.movieId =  movieModel.movieList?.movieResult?[indexPath.row].id
         self.navigationController?.pushViewController(movieDetailsViewController, animated: true)
     }
+}
+
+extension ViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //self.movieList = self.movieModel.movieList?.movieResult
+        if (searchText.isEmpty) {
+            self.movieModel.movieList?.movieResult = self.movieList
+        } else {
+            self.movieModel.movieList?.movieResult = self.movieModel.movieList?.movieResult?.filter{$0.movieOriginalTitle?.range(of: searchText, options: [.caseInsensitive]) != nil}
+           // self.movieModel.movieList?.movieResult = self.movieModel.movieList?.movieResult?.filter{($0.movieOriginalTitle?.contains(searchText))!}
+        }
+        self.tableView.reloadData()
+    }
+    
 }
 
 extension ViewController: MovieListViewModelDelegate {

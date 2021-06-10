@@ -15,11 +15,13 @@ class MovieListViewModel {
 
     var movieList: MoviePlayingModel?
     var delegate: MovieListViewModelDelegate?
-
+    weak var vc: ViewController?
+    
     func getMovieNowPlayingList() {
         let movieManager = MovieListManager()
         movieManager.getMovieList() { (response) in
             self.movieList = response
+            self.vc?.movieList = self.movieList?.movieResult
             self.delegate?.didGetMovieListData()
         } errorCompletionHandler: { (error) in
             print("\(error?.localizedDescription ?? "")")

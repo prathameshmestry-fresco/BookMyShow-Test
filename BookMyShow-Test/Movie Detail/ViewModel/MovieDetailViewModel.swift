@@ -13,11 +13,11 @@ protocol MovieDetailViewModelDelegate {
 
 class MovieDetailViewModel {
     
-    enum Section {
-        case synopsis,
-             reviews,
-             credits,
-             similarMovies
+    enum Section: String {
+        case synopsis = "Synopsis",
+             reviews = "Reviews",
+             credits = "Cast & Crew",
+             similarMovies = "You might also like"
     }
     
     var sections: [Section] = [.synopsis, .reviews, .credits, .similarMovies]

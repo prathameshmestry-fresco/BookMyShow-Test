@@ -42,7 +42,7 @@
                                         </constraints>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TtE-gS-7iI">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TtE-gS-7iI">
                                         <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,7 +54,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="YgU-AQ-kCL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="052-PD-JLR"/>
-                            <constraint firstItem="7Bo-Ou-or9" firstAttribute="trailing" secondItem="YgU-AQ-kCL" secondAttribute="trailing" id="OkK-YH-gFf"/>
+                            <constraint firstAttribute="trailing" secondItem="YgU-AQ-kCL" secondAttribute="trailing" id="OkK-YH-gFf"/>
                             <constraint firstItem="YgU-AQ-kCL" firstAttribute="top" secondItem="7Bo-Ou-or9" secondAttribute="top" id="c3W-SJ-eiy"/>
                             <constraint firstAttribute="bottom" secondItem="YgU-AQ-kCL" secondAttribute="bottom" id="ukE-iv-vbJ"/>
                         </constraints>

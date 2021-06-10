@@ -82,12 +82,10 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //self.movieList = self.movieModel.movieList?.movieResult
         if (searchText.isEmpty) {
             self.movieModel.movieList?.movieResult = self.movieList
         } else {
             self.movieModel.movieList?.movieResult = self.movieModel.movieList?.movieResult?.filter{$0.movieOriginalTitle?.range(of: searchText, options: [.caseInsensitive]) != nil}
-           // self.movieModel.movieList?.movieResult = self.movieModel.movieList?.movieResult?.filter{($0.movieOriginalTitle?.contains(searchText))!}
         }
         self.tableView.reloadData()
     }

@@ -111,7 +111,6 @@ extension MovieDetailsViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        //print("Section \(indexPath.section)")
         let section = movieModel.sections[indexPath.section]
         if section == .synopsis {
             return UITableView.automaticDimension
@@ -123,6 +122,18 @@ extension MovieDetailsViewController : UITableViewDelegate {
         return 0.0
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let section = movieModel.sections[section]
+        if section == .synopsis {
+            return 0.0
+        } else {
+            return 44.0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return movieModel.sections[section].rawValue
+    }
 }
 
 extension MovieDetailsViewController: MovieDetailViewModelDelegate {

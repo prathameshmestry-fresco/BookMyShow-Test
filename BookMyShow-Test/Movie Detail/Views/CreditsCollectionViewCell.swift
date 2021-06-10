@@ -18,10 +18,12 @@ class CreditsCollectionViewCell: UICollectionViewCell {
         setupView()
     }
     
+    //MARK: Setup View Credits cell
     func setupView() {
         castProfileImageView.setCornerStyle()
     }
     
+    //MARK: Setup Data Credits cell
     func setupData(credit: MovieCreditModel, index: Int) {
         let imageConfig: MoviePosterImageModel = ImageConfigHelper.shared.movieImageConfig!
         castProfileImageView.af.setImage(withURL: URL(string: "\(imageConfig.images?.secureBaseURL ?? "")/\(imageConfig.images?.logoSizes?[3] ?? "")/\(credit.cast?[index].profilePath ?? "")")!)

@@ -72,7 +72,7 @@ enum MovieRouterProtocol: RouterProtocol {
 
 class MovieListManager {
     
-    //MARK:- API Functions
+    //MARK:- API Functions for Get Movie List
     func getMovieList(successCompletionHandler : @escaping (_ response : MoviePlayingModel) -> Void, errorCompletionHandler : @escaping (_ error: Error?) -> Void) {
         
         if RestClient.isConnectedToInternet() {
@@ -92,6 +92,7 @@ class MovieListManager {
         }
     }
     
+    //MARK:- API Functions for Get Movie Synopsis Details
     func getMovieSynopsisDetail(movieId: Int, successCompletionHandler : @escaping (_ response : MovieSynopsisModel) -> Void, errorCompletionHandler : @escaping (_ error: Error?) -> Void) {
         
         if RestClient.isConnectedToInternet() {
@@ -111,6 +112,7 @@ class MovieListManager {
         }
     }
     
+    //MARK:- API Functions for Get Movie Reviews Data
     func getMovieReviewsDetail(movieId: Int, successCompletionHandler : @escaping (_ response : MovieReviewsModel) -> Void, errorCompletionHandler : @escaping (_ error: Error?) -> Void) {
         
         if RestClient.isConnectedToInternet() {
@@ -130,6 +132,7 @@ class MovieListManager {
         }
     }
     
+    //MARK:- API Functions for Get Movie Credits Data
     func getMovieCreditDetail(movieId: Int, successCompletionHandler : @escaping (_ response : MovieCreditModel) -> Void, errorCompletionHandler : @escaping (_ error: Error?) -> Void) {
         
         if RestClient.isConnectedToInternet() {
@@ -149,6 +152,7 @@ class MovieListManager {
         }
     }
     
+    //MARK:- API Functions for Get Similar Movies Detail
     func getSimilarMovieDetail(movieId: Int, successCompletionHandler : @escaping (_ response : SimilarMoviesModel) -> Void, errorCompletionHandler : @escaping (_ error: Error?) -> Void) {
         
         if RestClient.isConnectedToInternet() {
@@ -168,6 +172,7 @@ class MovieListManager {
         }
     }
     
+    //MARK:- API Functions for Get Image Configuration
     func getMovieImageConfiguration(successCompletionHandler : @escaping (_ response : MoviePosterImageModel) -> Void, errorCompletionHandler : @escaping (_ error: Error?) -> Void) {
         
         if RestClient.isConnectedToInternet() {

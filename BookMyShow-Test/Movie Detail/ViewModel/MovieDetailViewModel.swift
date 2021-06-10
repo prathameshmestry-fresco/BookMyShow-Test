@@ -27,6 +27,7 @@ class MovieDetailViewModel {
     var similarMovie: SimilarMoviesModel?
     var delegate: MovieDetailViewModelDelegate?
     
+    //MARK: API Call for Movie Synopsis
     func getMovieSynoposisData(id: Int, sectionIndex: Int) {
         let movieManager = MovieListManager()
         movieManager.getMovieSynopsisDetail(movieId: id) { (response) in
@@ -37,6 +38,7 @@ class MovieDetailViewModel {
         }
     }
     
+    //MARK: API Call for Movie Review
     func getMovieReviewsData(id: Int, sectionIndex: Int) {
         let movieManager = MovieListManager()
         movieManager.getMovieReviewsDetail(movieId: id) { (response) in
@@ -50,6 +52,7 @@ class MovieDetailViewModel {
         }
     }
     
+    //MARK: API Call for Movie Credit
     func getMovieCreditData(id: Int, sectionIndex: Int) {
         let movieManager = MovieListManager()
         movieManager.getMovieCreditDetail(movieId: id) { (response) in
@@ -63,6 +66,7 @@ class MovieDetailViewModel {
         }
     }
     
+    //MARK: API Call for Similar Movie
     func getSimilarMovieData(id: Int, sectionIndex: Int) {
         let movieManager = MovieListManager()
         movieManager.getSimilarMovieDetail(movieId: id) { (response) in

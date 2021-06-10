@@ -71,10 +71,6 @@ enum Router: URLRequestConvertible {
         mutableURLRequest.httpMethod = httpMethod // Set request method
         
         mutableURLRequest.setValue("application/json", forHTTPHeaderField:"Content-Type")
-   
-//        if !Constants.mockApiKey.isEmpty {
-//            mutableURLRequest.setValue(Constants.mockApiKey, forHTTPHeaderField: "x-api-key")
-//        }
  
         return mutableURLRequest
     }

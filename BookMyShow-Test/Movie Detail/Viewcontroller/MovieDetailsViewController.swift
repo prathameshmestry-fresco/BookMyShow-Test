@@ -25,11 +25,13 @@ class MovieDetailsViewController: UIViewController {
         setupView()
     }
     
+    //MARK: Setup View
     func setupView() {
         setupTableView()
         getMovieDetails()
     }
     
+    //MARK: Get Movie Details APIs
     func getMovieDetails() {
         movieModel.delegate = self
         let group = DispatchGroup()
@@ -67,6 +69,7 @@ class MovieDetailsViewController: UIViewController {
     
 }
 
+//MARK: UITableView DataSource Methods
 extension MovieDetailsViewController : UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -108,6 +111,7 @@ extension MovieDetailsViewController : UITableViewDataSource {
     
 }
 
+//MARK: UITableView Delegate Methods
 extension MovieDetailsViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -137,9 +141,9 @@ extension MovieDetailsViewController : UITableViewDelegate {
     }
 }
 
+//MARK: MovieDetailViewModel Delegate Methods
 extension MovieDetailsViewController: MovieDetailViewModelDelegate {
     func didGetMovieDetailsData(index: Int) {
         self.tableView.reloadData()
-        //self.tableView.reloadSections(IndexSet(integer: index), with: .fade)
     }
 }

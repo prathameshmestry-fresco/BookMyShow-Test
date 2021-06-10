@@ -30,10 +30,12 @@ class ReusableCollectionViewTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    //MARK: Setup View
     func setupView() {
         setupCollectionView()
     }
     
+    //MARK: Setup CollectionView
     func setupCollectionView() {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
@@ -41,6 +43,7 @@ class ReusableCollectionViewTableViewCell: UITableViewCell {
         self.collectionView.registerNibs(cellIdentifiers)
     }
     
+    //MARK: Setup Data for CollectionView
     func setupData(section: MovieDetailViewModel.Section, model: MovieDetailViewModel) {
         self.sectionName = section
         self.movieDetailsModel = model
@@ -49,6 +52,7 @@ class ReusableCollectionViewTableViewCell: UITableViewCell {
     
 }
 
+//MARK: UICollectionView DataSource Methods
 extension ReusableCollectionViewTableViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -115,6 +119,7 @@ extension ReusableCollectionViewTableViewCell: UICollectionViewDataSource, UICol
     }
 }
 
+//MARK: UICollectionView Delegate Methods
 extension ReusableCollectionViewTableViewCell: UICollectionViewDelegate {
     
 }

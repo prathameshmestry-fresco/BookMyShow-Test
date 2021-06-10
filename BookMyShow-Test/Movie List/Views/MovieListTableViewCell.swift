@@ -28,11 +28,13 @@ class MovieListTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    //MARK: Setup View for MovieList Cell
     func setupView() {
         movieListView.setViewtyle(radius: 10.0)
         bookTicketButton.setBookButtonStyle()
     }
     
+    //MARK: Setup data in MovieList Cell
     func setupData(movieData: MovieDetailModel) {
         let imageConfig: MoviePosterImageModel = ImageConfigHelper.shared.movieImageConfig!
         let imgUrl = URL(string: "\(imageConfig.images?.secureBaseURL ?? "")/\(imageConfig.images?.logoSizes?[3] ?? "")/\(movieData.posterUrl ?? "")")

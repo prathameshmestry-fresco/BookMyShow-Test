@@ -17,6 +17,7 @@ class MovieListViewModel {
     var delegate: MovieListViewModelDelegate?
     weak var vc: ViewController?
     
+    //MARK: API Call for Now Playing Movies
     func getMovieNowPlayingList() {
         let movieManager = MovieListManager()
         movieManager.getMovieList() { (response) in

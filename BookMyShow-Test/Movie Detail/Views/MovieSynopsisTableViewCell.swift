@@ -22,6 +22,7 @@ class MovieSynopsisTableViewCell: UITableViewCell {
         setupView()
     }
 
+    //MARK: Setup View for Movie Synopsis Cell
     func setupView() {
         moviePosterImageView.setCornerStyle()
     }
@@ -30,6 +31,7 @@ class MovieSynopsisTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    //MARK: Setup data for Movie Synopsis Cell
     func setupData(synopsisData: MovieSynopsisModel) {
         let imageConfig: MoviePosterImageModel = ImageConfigHelper.shared.movieImageConfig!
         moviePosterImageView.af.setImage(withURL: URL(string: "\(imageConfig.images?.secureBaseURL ?? "")/\(imageConfig.images?.backdropSizes?[2] ?? "")/\(synopsisData.backdropPath ?? "")")!)

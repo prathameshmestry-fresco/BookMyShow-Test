@@ -12,6 +12,7 @@ class ImageConfigHelper {
     static let shared = ImageConfigHelper()
     var movieImageConfig: MoviePosterImageModel?
     
+    //MARK: API Call for Image Configuration
     func getImageConfig() {
         let movieManager = MovieListManager()
         movieManager.getMovieImageConfiguration() { (response) in

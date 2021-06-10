@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         getMovieList()
     }
     
+    //MARK: Setup View
     func setupView() {
         self.title = "Movies"
         self.movieSearchBar.delegate = self
@@ -34,6 +35,7 @@ class ViewController: UIViewController {
         setupTableView()
     }
     
+    //MARK: Get Movies List APIs
     func getMovieList() {
         movieModel.delegate = self
         movieModel.vc = self
@@ -80,6 +82,7 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
+//MARK: UISearchBarDelegate Methods
 extension ViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -90,9 +93,9 @@ extension ViewController: UISearchBarDelegate {
         }
         self.tableView.reloadData()
     }
-    
 }
 
+//MARK: MovieListViewModel Delegate Methods
 extension ViewController: MovieListViewModelDelegate {
     
     func didGetMovieListData() {

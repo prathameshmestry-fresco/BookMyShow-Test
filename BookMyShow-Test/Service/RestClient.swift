@@ -10,6 +10,7 @@ import Alamofire
 
 class RestClient {
     
+    //MARK: Check Internet Connection Method
     class func isConnectedToInternet() -> Bool {
         let manager = NetworkReachabilityManager(host: "www.apple.com")
         if let isReachable = manager?.isReachable, isReachable {

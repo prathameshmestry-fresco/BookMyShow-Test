@@ -99,6 +99,7 @@ extension MovieDetailsViewController : UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.reusableCollectionViewTableViewCell.rawValue) as? ReusableCollectionViewTableViewCell else {
                 return UITableViewCell()
             }
+            cell.selectionStyle = .none
             cell.setupData(section: section, model: self.movieModel)
             return cell
             
@@ -115,7 +116,7 @@ extension MovieDetailsViewController : UITableViewDelegate {
         if section == .synopsis {
             return UITableView.automaticDimension
         } else if section == .reviews {
-            return 100.0
+            return 150.0
         } else if section == .credits || section == .similarMovies {
             return 300.0
         }

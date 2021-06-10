@@ -25,9 +25,9 @@ class SimilarMoviesCollectionViewCell: UICollectionViewCell {
     
     func setupData(similarMovie: SimilarMoviesModel, index: Int) {
         let imageConfig: MoviePosterImageModel = ImageConfigHelper.shared.movieImageConfig!
-        similarMovieImageView.af.setImage(withURL: URL(string: "\(imageConfig.images?.secureBaseURL ?? "")/\(imageConfig.images?.logoSizes?[3] ?? "")/\(similarMovie.results?[index].backdropPath ?? "")")!)
+        similarMovieImageView.af.setImage(withURL: URL(string: "\(imageConfig.images?.secureBaseURL ?? "")/\(imageConfig.images?.logoSizes?[4] ?? "")/\(similarMovie.results?[index].backdropPath ?? "")")!)
         similarMovieNameLabel.text = similarMovie.results?[index].originalTitle
-        languageLabel.text = similarMovie.results?[index].originalLanguage
+        languageLabel.text = similarMovie.results?[index].originalLanguage?.capitalized
     }
 
 }

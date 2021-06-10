@@ -15,8 +15,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="363" height="133"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xso-0c-b7D">
-                        <rect key="frame" x="0.0" y="0.0" width="363" height="133"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xso-0c-b7D">
+                        <rect key="frame" x="0.0" y="5" width="363" height="123"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="fEc-XR-EeO">
                             <size key="itemSize" width="128" height="128"/>
@@ -29,9 +29,9 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="xso-0c-b7D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="4e9-cc-URx"/>
-                    <constraint firstAttribute="bottom" secondItem="xso-0c-b7D" secondAttribute="bottom" id="KeA-A7-Ymb"/>
+                    <constraint firstAttribute="bottom" secondItem="xso-0c-b7D" secondAttribute="bottom" constant="5" id="KeA-A7-Ymb"/>
                     <constraint firstAttribute="trailing" secondItem="xso-0c-b7D" secondAttribute="trailing" id="Q7z-uQ-7Se"/>
-                    <constraint firstItem="xso-0c-b7D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fLB-4B-nob"/>
+                    <constraint firstItem="xso-0c-b7D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="fLB-4B-nob"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -99,7 +99,6 @@ extension MovieDetailsViewController : UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellNames.reusableCollectionViewTableViewCell.rawValue) as? ReusableCollectionViewTableViewCell else {
                 return UITableViewCell()
             }
-            cell.backgroundColor = UIColor.red
             cell.setupData(section: section, model: self.movieModel)
             return cell
             
@@ -119,7 +118,7 @@ extension MovieDetailsViewController : UITableViewDelegate {
         } else if section == .reviews {
             return 100.0
         } else if section == .credits || section == .similarMovies {
-            return 170.0
+            return 300.0
         }
         return 0.0
     }

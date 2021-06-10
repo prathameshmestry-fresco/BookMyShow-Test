@@ -109,7 +109,7 @@ extension ReusableCollectionViewTableViewCell: UICollectionViewDataSource, UICol
         case .reviews:
             return CGSize(width: self.frame.width - 100, height: 100)
         default:
-            return CGSize(width: 150, height: 170)
+            return CGSize(width: 150, height: 300.0)
             
         }
     }

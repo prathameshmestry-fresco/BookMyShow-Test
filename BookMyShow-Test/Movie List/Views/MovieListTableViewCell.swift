@@ -15,7 +15,8 @@ class MovieListTableViewCell: UITableViewCell {
     @IBOutlet weak var moviePosterImageView: UIImageView!
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var releaseDataLabel: UILabel!
-    @IBOutlet weak var otherDetailsLabel: UILabel!
+    @IBOutlet weak var movieVoteCountLabel: UILabel!
+    @IBOutlet weak var movieLanguageLabel: UILabel!
     @IBOutlet weak var movieAdultLabel: UILabel!
 
     override func awakeFromNib() {
@@ -38,7 +39,8 @@ class MovieListTableViewCell: UITableViewCell {
         self.moviePosterImageView.af.setImage(withURL: imgUrl!)
         self.movieNameLabel.text = movieData.title
         self.releaseDataLabel.text = "Release On: \(movieData.releaseDate ?? "")"
-        self.otherDetailsLabel.text = movieData.movieOverview
+        self.movieVoteCountLabel.text = "\(movieData.voteCount ?? 0) Votes"
+        self.movieLanguageLabel.text = "\(movieData.language?.capitalized ?? "")"
         self.movieAdultLabel.text = movieData.isMovieAdult ?? false ? "A" : "U"
 
     }

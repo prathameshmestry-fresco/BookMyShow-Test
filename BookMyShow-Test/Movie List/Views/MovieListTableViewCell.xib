@@ -33,7 +33,7 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qOV-3S-Qvd">
-                                                <rect key="frame" x="110" y="0.0" width="237" height="69.5"/>
+                                                <rect key="frame" x="110" y="0.0" width="237" height="96.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BG-gA-Spn">
                                                         <rect key="frame" x="0.0" y="0.0" width="237" height="21.5"/>
@@ -42,15 +42,21 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGw-r9-KA3">
-                                                        <rect key="frame" x="0.0" y="26.5" width="237" height="19"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                        <nil key="textColor"/>
+                                                        <rect key="frame" x="0.0" y="26.5" width="237" height="20"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemGrayColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CO9-LU-GBg">
-                                                        <rect key="frame" x="0.0" y="50.5" width="237" height="19"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                        <nil key="textColor"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CO9-LU-GBg">
+                                                        <rect key="frame" x="0.0" y="51.5" width="237" height="20"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoD-bp-XU5">
+                                                        <rect key="frame" x="0.0" y="76.5" width="237" height="20"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemGrayColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -103,10 +109,11 @@
             <connections>
                 <outlet property="bookTicketButton" destination="mTK-yH-2dg" id="z5K-G3-8bz"/>
                 <outlet property="movieAdultLabel" destination="w12-5B-j0S" id="7hs-AJ-DFh"/>
+                <outlet property="movieLanguageLabel" destination="VoD-bp-XU5" id="JSA-qT-IzS"/>
                 <outlet property="movieListView" destination="0Lp-OU-VQP" id="Eds-g9-g0m"/>
                 <outlet property="movieNameLabel" destination="5BG-gA-Spn" id="8WV-rp-Fbv"/>
                 <outlet property="moviePosterImageView" destination="45S-BT-6Fs" id="Td9-jY-OcN"/>
-                <outlet property="otherDetailsLabel" destination="CO9-LU-GBg" id="MpE-8j-TAH"/>
+                <outlet property="movieVoteCountLabel" destination="CO9-LU-GBg" id="54f-5h-JoO"/>
                 <outlet property="releaseDataLabel" destination="lGw-r9-KA3" id="bn5-oE-SCB"/>
             </connections>
             <point key="canvasLocation" x="89.130434782608702" y="146.31696428571428"/>
@@ -115,6 +122,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

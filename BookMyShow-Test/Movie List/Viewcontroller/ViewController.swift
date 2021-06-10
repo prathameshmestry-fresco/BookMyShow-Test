@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     func setupView() {
         self.title = "Movies"
         self.movieSearchBar.delegate = self
+        self.movieSearchBar.placeholder = "Search for Movies"
         self.view.backgroundColor = UIColor.lightGray
         setupTableView()
     }

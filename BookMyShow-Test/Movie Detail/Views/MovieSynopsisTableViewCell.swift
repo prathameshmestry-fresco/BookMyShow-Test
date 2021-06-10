@@ -14,7 +14,7 @@ class MovieSynopsisTableViewCell: UITableViewCell {
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var movieTagLineLabel: UILabel!
     @IBOutlet weak var movieReleaseDateLabel: UILabel!
-    @IBOutlet weak var moviePopularityLabel: UILabel!
+    @IBOutlet weak var movieVoteAverageLabel: UILabel!
     @IBOutlet weak var movieOverViewLabel: UILabel!
 
     override func awakeFromNib() {
@@ -35,8 +35,8 @@ class MovieSynopsisTableViewCell: UITableViewCell {
         moviePosterImageView.af.setImage(withURL: URL(string: "\(imageConfig.images?.secureBaseURL ?? "")/\(imageConfig.images?.backdropSizes?[2] ?? "")/\(synopsisData.backdropPath ?? "")")!)
         movieTitleLabel.text = synopsisData.title
         movieTagLineLabel.text = synopsisData.tagLine
-        movieReleaseDateLabel.text = synopsisData.releaseDate
-        moviePopularityLabel.text = "\(synopsisData.popularity ?? 0)"
+        movieReleaseDateLabel.text = "Release Date:\(synopsisData.releaseDate ?? "") (\(synopsisData.isMovieAdult ?? false ? "A" : "U"))"
+        movieVoteAverageLabel.text = "Vote Average: \(synopsisData.voteAverage ?? 0)"
         movieOverViewLabel.text = synopsisData.movieOverview
     }
     

@@ -74,7 +74,7 @@ class MovieSynopsisModel: Codable {
         self.title = try values.decodeIfPresent(String.self, forKey: .title)
         self.isVideo = try values.decodeIfPresent(Bool.self, forKey: .isVideo)
         self.voteCount = try values.decodeIfPresent(Int.self, forKey: .voteCount)
-        self.voteAverage = try values.decodeIfPresent(Double.self, forKey: .popularity)
+        self.voteAverage = try values.decodeIfPresent(Double.self, forKey: .voteAverage)
     }
     
 }

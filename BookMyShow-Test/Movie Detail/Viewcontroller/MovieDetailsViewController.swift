@@ -91,6 +91,7 @@ extension MovieDetailsViewController : UITableViewDataSource {
             if let data = movieModel.movieSynopsis {
                 cell.setupData(synopsisData: data)
             }
+            cell.selectionStyle = .none
             return cell
             
         } else {

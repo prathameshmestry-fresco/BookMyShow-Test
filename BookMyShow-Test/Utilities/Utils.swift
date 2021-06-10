@@ -16,6 +16,14 @@ class Utils {
     }
 }
 
+extension UIImageView {
+    
+    func setCornerStyle() {
+        self.layer.cornerRadius = 5.0
+    }
+    
+}
+
 
 extension UITableView {
     func registerNibs(_ cellIdentifiers: [String]) {

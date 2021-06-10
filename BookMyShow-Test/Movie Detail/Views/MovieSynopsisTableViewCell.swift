@@ -19,8 +19,13 @@ class MovieSynopsisTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupView()
     }
 
+    func setupView() {
+        moviePosterImageView.setCornerStyle()
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

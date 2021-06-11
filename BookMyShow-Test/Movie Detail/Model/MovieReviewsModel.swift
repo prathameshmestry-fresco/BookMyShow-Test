@@ -1,32 +1,34 @@
 //
-//  MoviePlayingModel.swift
+//  MovieReviewsModel.swift
 //  BookMyShow-Test
 //
-//  Created by Prathamesh Mestry on 04/06/21.
+//  Created by Prathamesh Mestry on 08/06/21.
 //
 
 import Foundation
 
-class MoviePlayingModel: Codable {
+class MovieReviewsModel: Codable {
 
-    let pageNumber: Int?
-    let movieResult: [MovieDetailModel]?
+    let id: Int?
+    let page: Int?
+    let results: [ReviewResultsModel]?
     let totalPages: Int?
     let totalResults: Int?
-    
+ 
     enum CodingKeys: String, CodingKey {
-        case pageNumber = "page"
-        case movieResult = "results"
+        case id = "id"
+        case page = "page"
+        case results = "results"
         case totalPages = "total_pages"
         case totalResults = "total_results"
     }
     
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        self.pageNumber = try values.decodeIfPresent(Int.self, forKey: .pageNumber)
-        self.movieResult = try values.decodeIfPresent([MovieDetailModel].self, forKey: .movieResult)
+        self.id = try values.decodeIfPresent(Int.self, forKey: .id)
+        self.page = try values.decodeIfPresent(Int.self, forKey: .page)
+        self.results = try values.decodeIfPresent([ReviewResultsModel].self, forKey: .results)
         self.totalPages = try values.decodeIfPresent(Int.self, forKey: .totalPages)
         self.totalResults = try values.decodeIfPresent(Int.self, forKey: .totalResults)
     }
-
 }

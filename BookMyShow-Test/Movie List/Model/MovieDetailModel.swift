@@ -10,7 +10,7 @@ import Foundation
 class MovieDetailModel: Codable {
 
     let posterUrl: String?
-    let movieAdult: Bool?
+    let isMovieAdult: Bool?
     let movieOverview: String?
     let releaseDate: String?
     let id: Int?
@@ -25,7 +25,7 @@ class MovieDetailModel: Codable {
     
     enum CodingKeys: String, CodingKey {
         case posterUrl = "poster_path"
-        case movieAdult = "adult"
+        case isMovieAdult = "adult"
         case movieOverview = "overview"
         case releaseDate = "release_date"
         case id = "id"
@@ -42,7 +42,7 @@ class MovieDetailModel: Codable {
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.posterUrl = try values.decodeIfPresent(String.self, forKey: .posterUrl)
-        self.movieAdult = try values.decodeIfPresent(Bool.self, forKey: .movieAdult)
+        self.isMovieAdult = try values.decodeIfPresent(Bool.self, forKey: .isMovieAdult)
         self.movieOverview = try values.decodeIfPresent(String.self, forKey: .movieOverview)
         self.releaseDate = try values.decodeIfPresent(String.self, forKey: .releaseDate)
         self.id = try values.decodeIfPresent(Int.self, forKey: .id)

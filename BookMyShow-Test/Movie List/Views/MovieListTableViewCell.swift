@@ -38,12 +38,11 @@ class MovieListTableViewCell: UITableViewCell {
     func setupData(movieData: MovieDetailModel) {
         let imageConfig: MoviePosterImageModel = ImageConfigHelper.shared.movieImageConfig!
         let imgUrl = URL(string: "\(imageConfig.images?.secureBaseURL ?? "")/\(imageConfig.images?.logoSizes?[3] ?? "")/\(movieData.posterUrl ?? "")")
-        self.moviePosterImageView.af.setImage(withURL: imgUrl!)
+        self.moviePosterImageView.af.setImage(withURL: imgUrl!, placeholderImage: #imageLiteral(resourceName: "movie"))
         self.movieNameLabel.text = movieData.title
         self.releaseDataLabel.text = "Release On: \(movieData.releaseDate ?? "")"
         self.movieVoteCountLabel.text = "\(movieData.voteCount ?? 0) Votes"
         self.movieLanguageLabel.text = "\(movieData.language?.capitalized ?? "")"
         self.movieAdultLabel.text = movieData.isMovieAdult ?? false ? "A" : "U"
-
     }
 }

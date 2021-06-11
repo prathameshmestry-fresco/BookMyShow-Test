@@ -26,8 +26,8 @@ class CreditsCollectionViewCell: UICollectionViewCell {
     //MARK: Setup Data Credits cell
     func setupData(credit: MovieCreditModel, index: Int) {
         let imageConfig: MoviePosterImageModel = ImageConfigHelper.shared.movieImageConfig!
-        castProfileImageView.af.setImage(withURL: URL(string: "\(imageConfig.images?.secureBaseURL ?? "")/\(imageConfig.images?.logoSizes?[3] ?? "")/\(credit.cast?[index].profilePath ?? "")")!)
-        self.castOriginalNameLabel.text = "\(credit.cast?[index].name ?? "") (\(credit.cast?[index].knownDepartment ?? ""))"
+        castProfileImageView.af.setImage(withURL: URL(string: "\(imageConfig.images?.secureBaseURL ?? "")/\(imageConfig.images?.logoSizes?[3] ?? "")/\(credit.cast?[index].profilePath ?? "")")!, placeholderImage: #imageLiteral(resourceName: "avatar"))
+        self.castOriginalNameLabel.text = "\(credit.cast?[index].name ?? "" ) (\(credit.cast?[index].knownDepartment ?? ""))"
         self.castCharacterNameLabel.text = credit.cast?[index].character
     }
 

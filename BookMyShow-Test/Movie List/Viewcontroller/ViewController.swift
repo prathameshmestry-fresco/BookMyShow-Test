@@ -39,7 +39,19 @@ class ViewController: UIViewController {
     func getMovieList() {
         movieModel.delegate = self
         movieModel.vc = self
+        
+        let group = DispatchGroup()
+        group.enter()
+        ImageConfigHelper.shared.getImageConfig()
+        group.leave()
+        
+        group.enter()
         movieModel.getMovieNowPlayingList()
+        group.leave()
+        
+        group.notify(queue: DispatchQueue.main) {
+            self.tableView.reloadData()
+        }
     }
     
     //MARK: Setup TableView
